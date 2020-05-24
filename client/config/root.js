@@ -10,7 +10,7 @@ import store, { history } from '../redux'
 
 import Home from '../components/home'
 import DummyView from '../components/dummy-view'
-// import NotFound from '../components/404'
+import NotFound from '../components/404'
 
 import Startup from './startup'
 
@@ -82,11 +82,11 @@ export default (props) => {
       <ConnectedRouter history={history} location={props.location} context={props.context}>
         <StartupConnected>
           <Switch>
-            <Route exact path="/" component={() => <DummyView />} />
-            <Route exact path="/dashboard" component={() => <Home />} />
-            <Route exact path="/dashboard/main" component={() => <Home />} />
-            <Route exact path="/dashboard/profile/:username" component={() => <Home />} />
+            <Route exact path="/" component={() => <Home />} />
+            <Route exact path="/:username" component={() => <Home />} />
+            <Route exact path="/:username/:repositoryname" component={() => <Home />} />
             <PrivateRouteConnected exact path="/hidden-route" component={() => <DummyView />} />
+            <Route component={() => <NotFound />} />
           </Switch>
         </StartupConnected>
       </ConnectedRouter>
