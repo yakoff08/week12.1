@@ -3,7 +3,7 @@ import Markdown from 'markdown-to-jsx'
 
 const RepositoryName = (props) => {
   return (
-    <div>
+    <div className=" bg-teal-100 border-2 border-gray-600">
       <Markdown id="description">{props.text}</Markdown>
     </div>
   )

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const RepositoryList = (props) => {
   const { repo, username } = props
   return (
-    <div>
+    <div className=" bg-teal-100 text-center border-2 border-gray-600 ...">
       {repo.map((it) => (
         <div>
           <Link to={`/${username}/${it}`}>{it}</Link>
